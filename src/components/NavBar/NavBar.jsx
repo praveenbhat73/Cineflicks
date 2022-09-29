@@ -4,7 +4,7 @@ import {Menu,AccountCircle,Brightness4,Brightness7} from '@mui/icons-material'
 import {Link} from 'react-router-dom'
 import { useTheme } from '@mui/material/styles'
 import useStyles from './styles'
-import {Sidebar} from '..'
+import {Sidebar,Search} from '..'
 const NavBar = () => {
  const[mobileOpen,setmobileOpen]=useState(false);
 
@@ -41,7 +41,7 @@ const NavBar = () => {
              }
             </IconButton>
             {
-              !isMobile && 'Search....'
+              !isMobile && <Search/>
             }
             <div>
               {
@@ -73,7 +73,7 @@ const NavBar = () => {
               }
             </div>
             {
-              isMobile && 'Search....'
+              isMobile && <Search/>
             }
         </Toolbar>
       </AppBar>
