@@ -1,6 +1,13 @@
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles((theme)=>({
+  scroll: {
+    overflowY: 'scroll',
+    scrollBehavior:'smooth',
+    '&::-webkit-scrollbar':{
+      display: 'none',
+    }
+  },
   imageLink:{
     display: 'flex',
     justifyContent:'center',

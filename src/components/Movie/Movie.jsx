@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import useStyles from './styles.js';
 const Movie = ({movie,i}) => {
     const classes=useStyles();
-    console.log(movie,i)
+    // console.log(movie,i)
   return (
    <>
     <Grid item xs={12} sm={6}  lg={3} xl={2.1} className={classes.movie} >

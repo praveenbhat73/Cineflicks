@@ -11,6 +11,7 @@ const App = () =>
 {
   const classes=useStyles();
     return (
+      <>
     <div className={classes.root}>
       <CssBaseline/>
       <NavBar/>
@@ -25,6 +26,7 @@ const App = () =>
         </main>
      
     </div>
+    </>
 );
 } 
            

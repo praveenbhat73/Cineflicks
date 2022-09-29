@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
   movie: {
-   padding: '5px',
+   padding: '10px',
 
   },
   title: {
