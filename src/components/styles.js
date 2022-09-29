@@ -1,9 +1,12 @@
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles(()=>({
- 
     root:{
-        
+        overflowY: 'scroll',
+        scrollBehavior:'smooth',
+        '&::-webkit-scrollbar':{
+          display:'none'
+        },
         display:'flex',
         height:'100%',
     },
