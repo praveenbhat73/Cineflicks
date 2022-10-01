@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { Divider, List, ListItem, ListItemText, ListSubheader, ListItemIcon, Box, CircularProgress } from '@mui/material';
+import { Divider, List, ListItem, ListItemText, ListSubheader, ListItemIcon, Box, CircularProgress,Typography } from '@mui/material';
 import {Link} from 'react-router-dom'
 import {useTheme} from '@mui/styles';
 import useStyles from './styles';
@@ -82,6 +82,11 @@ const Sidebar = ({setMobileOpen}) => {
             </Link>
           ))}
       </List>
+      <Typography variant='h6' sx={{marginTop:'2px',color:'gray'}}>
+            <a href="https://github.com/praveenbhat73"  target="_blank" style={{textDecoration:'none', color:'gray', fontSize:'15px'}}>
+              Copyright © PNB
+            </a>
+      </Typography>
     </div>
     </>
   )
