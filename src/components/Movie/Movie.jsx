@@ -7,7 +7,7 @@ const Movie = ({movie,i}) => {
     // console.log(movie,i)
   return (
    <>
-    <Grid item xs={12} sm={6}  lg={3} xl={2.1} className={classes.movie} >
+    <Grid item xs={12} sm={6}  lg={3} xl={2.2} className={classes.movie} >
     <Grow in key={i} timeout={(i + 1) * 210}>
         <Link className={classes.links} to={`/movie/${movie.id}`}>
           <img

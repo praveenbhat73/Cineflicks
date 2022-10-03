@@ -1,20 +1,76 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { userSelector } from '../../features/auth'
+import { Typography,Button,Box } from '@mui/material';
+import { ExitToApp } from '@mui/icons-material';
 import { useSelector } from 'react-redux'
-
-
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/121421-login (1).json';
+import useStyles from './styles.js';
 const Profile = () => {
+  const classes=useStyles();
+  const favoriteMovies=[];
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
   const {user}=useSelector(userSelector);
-  console.log(user);
+  // console.log(user);
+  const[set,seti]=useState(false);
+  const logout=()=>{
+    localStorage.clear();
+    window.location.href="/";
+  }
   return (
-    <div> 
-    <h3 style={{textTransform:'uppercase',color:'gray',}}>Profile</h3>
-    <div style={{display:'flex',alignItems:'center',gap:'5px'}}>
+    <Box>
+    <Box display="flex" justifyContent="space-between">
+    {/* <Button color="inherit" onClick={logout}>
+      Logout &nbsp;
+      <ExitToApp/>
+    </Button> */}
+
+    <div
+    className={classes.div} > 
+    <button
+    className={classes.button}
+    onClick={()=>{
+      seti(!set)
+    }}
+   
+    >
+      {
+       set ?
+       "Hide Profile😣"
+       :
+       "Who's Watching?😎" 
+      }
+    </button>
+    {
+      set &&
+      <>
+    <Lottie 
+	    options={defaultOptions}
+        height={300}
+        width={300}
+        
+      />
+    <h3 
+    className={classes.h3}>
+    Profile
+    </h3>
+    <div 
+    className={classes.divi}
+    >
       {
         <>
        
-        <h1 style={{color:'gray',gap:'2px',fontSize:'15px',textIndent:'10px',wordSpacing:'10px',display:'flex',justifyContent:'space-between',alignItems:'center',flexDirection:'row'}}>Username:- </h1>
+        <h1 
+        className={classes.h1}
+      >Username:- </h1>
        
                     {
                           user.username
@@ -24,7 +80,34 @@ const Profile = () => {
         </>
       }
       </div>
+
+    {
+      !favoriteMovies.length
+      ?
+      <Typography variant='h5'
+      sx={{
+        fontSize:'20px',
+        color:'gray',
+        marginTop:'10px',
+        marginBottom:'10px'
+      }}>
+        Add some favorite movies
+      </Typography>
+      :(
+        <Box>
+          Favorite Movie🍟
+        </Box>
+      )
+    }
+      <Button color="inherit" onClick={logout}
+      >
+      Logout &nbsp;
+      <ExitToApp/>
+    </Button>
+      </>
+    }
     </div>
+    </Box></Box>
   )
 }
 
