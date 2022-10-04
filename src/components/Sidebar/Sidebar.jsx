@@ -84,7 +84,7 @@ const Sidebar = ({setMobileOpen}) => {
       </List>
       <Typography variant='h6' sx={{marginTop:'2px',color:'gray'}}>
             <a href="https://github.com/praveenbhat73"  target="_blank" style={{textDecoration:'none', color:'gray', fontSize:'15px'}}>
-              Copyright © PNB
+              Copyright © PNB Made With☕
             </a>
       </Typography>
     </div>

@@ -14,9 +14,12 @@ export const fetchToken=async()=>{
     const token =data.request_token;
 
     if(data.success){
-            localStorage.setItem('request_token',token)  
-            window.location.href=`https://www.themoviedb.org/authenticate/${token}?redirect_to=${window.location.origin}/approved`
-    }
+            localStorage.setItem('request_token',token);
+            // console.log(window.location.origin);
+            window.location.href=`https://www.themoviedb.org/authenticate/${token}?redirect_to=${window.location.origin}/approved`;
+            // window.location.href={}   
+            // window.location='/'
+         }
 }
     catch(error)
     {
@@ -40,5 +43,8 @@ export const createSessionId = async () => {
         }
 
     }
-      
+    else{
+        console.log("couldn't create session id")
+    }
+      return null;
   };

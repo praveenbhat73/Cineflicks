@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import { userSelector } from '../../features/auth'
 import { Typography,Button,Box } from '@mui/material';
-import { ExitToApp } from '@mui/icons-material';
+// import { PowerOffRounded  } from '@mui/icons-material';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { useSelector } from 'react-redux'
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/121421-login (1).json';
@@ -91,7 +92,7 @@ const Profile = () => {
         marginTop:'10px',
         marginBottom:'10px'
       }}>
-        Add some favorite movies
+        Add some favorite movies ❤️
       </Typography>
       :(
         <Box>
@@ -102,7 +103,7 @@ const Profile = () => {
       <Button color="inherit" onClick={logout}
       >
       Logout &nbsp;
-      <ExitToApp/>
+      <PowerSettingsNewIcon/>
     </Button>
       </>
     }

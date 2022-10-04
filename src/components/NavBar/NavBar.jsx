@@ -8,8 +8,7 @@ import useStyles from './styles'
 import { useDispatch, useSelector } from 'react-redux';
 import {Sidebar,Search} from '..'
 import { setUser,userSelector } from '../../features/auth';
-
-
+// import {Profile} from '..'
 
 
 const NavBar = () => {
@@ -21,7 +20,7 @@ const NavBar = () => {
   const isMobile=useMediaQuery('(max-width:600px)')
   const theme=useTheme(); 
 
-  console.log(user)
+  // console.log(user)
   const token = localStorage.getItem('request_token');
   const sessionIdFromLocalStorage = localStorage.getItem('session_id');
   
