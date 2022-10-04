@@ -44,7 +44,8 @@ export default makeStyles((theme) => ({
     // boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px;',
     '&:hover': {
       transform: 'scale(1.06)',
-      boxShadow:' rgba(0, 0, 0, 0.2) 0px 5px;'
+      // boxShadow:' rgba(0, 0, 0, 0.2) 0px 5px;'
+      boxShadow: '0.5em 1em 1em rgb(64, 64, 70)',
   
     },
   },
