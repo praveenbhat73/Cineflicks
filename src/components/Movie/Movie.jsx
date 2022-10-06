@@ -10,11 +10,14 @@ const Movie = ({movie,i}) => {
     <Grid item xs={12} sm={6}  lg={3} xl={2.2} className={classes.movie} >
     <Grow in key={i} timeout={(i + 1) * 210}>
         <Link className={classes.links} to={`/movie/${movie.id}`}>
+        {
+          
           <img
             src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://www.fillmurray.com/200/300'}
             alt={movie.title}
             className={classes.image}
           />
+        }
           <Typography className={classes.title} variant="h5" fontFamily="Helvetica Neue">
           {
             movie.title
