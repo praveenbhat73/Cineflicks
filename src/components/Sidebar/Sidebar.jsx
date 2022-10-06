@@ -3,6 +3,7 @@ import { Divider, List, ListItem, ListItemText, ListSubheader, ListItemIcon, Box
 import {Link} from 'react-router-dom'
 import {useTheme} from '@mui/styles';
 import useStyles from './styles';
+
 import { useDispatch,useSelector } from 'react-redux';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
@@ -26,6 +27,9 @@ const democategories=[
 
 
 const Sidebar = ({setMobileOpen}) => {
+
+
+
   const theme=useTheme();
   const classes=useStyles();
   const { data, isFetching } = useGetGenresQuery();
@@ -36,7 +40,7 @@ const Sidebar = ({setMobileOpen}) => {
   return (
     <>
     <div className={classes.scroll}>
-
+  
       <Link to="/" className={classes.imageLink}>
       <img
        className={classes.image}
