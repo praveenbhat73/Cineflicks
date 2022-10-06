@@ -55,9 +55,9 @@ const Sidebar = ({setMobileOpen}) => {
             <Link key={value} className={classes.links} to="/">
               <ListItem onClick={() => dispatch(selectGenreOrCategory(value))}button>
                 <ListItemIcon>
-                <img src={genreIcons[label.toLowerCase()]} className={classes.genreImages} height={30} />
+                <img src={genreIcons[label.toLowerCase()]} className={classes.genreImages} height={30} fontFamily="Helvetica Neue"/>
                 </ListItemIcon> 
-                <ListItemText primary={label}/>
+                <ListItemText primary={label} />
               </ListItem>
             </Link>
            ))
@@ -68,7 +68,7 @@ const Sidebar = ({setMobileOpen}) => {
         <ListSubheader>Genres</ListSubheader>
         {isFetching ? (
           <Box display="flex" justifyContent="center">
-            <CircularProgress size="4rem" />
+            <CircularProgress size="1rem" />
           </Box>
         )
           : data?.genres?.map(({ name, id}) => (
@@ -83,7 +83,7 @@ const Sidebar = ({setMobileOpen}) => {
           ))}
       </List>
       <Typography variant='h6' sx={{marginTop:'2px',color:'gray'}}>
-            <a href="https://github.com/praveenbhat73"  target="_blank" style={{textDecoration:'none', color:'gray', fontSize:'15px'}}>
+            <a href="https://praveennbhat.vercel.app/"  target="_blank" style={{textDecoration:'none', color:'gray', fontSize:'15px'}}>
               Copyright © PNB Made With☕
             </a>
       </Typography>

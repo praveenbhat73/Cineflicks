@@ -3,7 +3,7 @@ import {Box,CircularProgress,useMediaQuery,Typography} from '@mui/material'
 import {useSelector} from 'react-redux'
 import { useGetMoviesQuery } from '../../services/TMDB'
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory'; 
-import {MovieList}  from '..'
+import {MovieList,Pagination}  from '..'
 const Movies = () => {
   const[page,setPage]=useState(1);
   const {genreIdOrCategoryName,searchQuery}=useSelector((state)=>state.currentGenreOrCategory);
@@ -40,6 +40,7 @@ if (error)return 'An error occured';
   return (
     <>
     <MovieList movies={data}/>
+    <Pagination setPage={setPage} currentPage={page} totalPage={data.total_pages}/>
     </>
 
   )

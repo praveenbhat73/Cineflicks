@@ -5,7 +5,7 @@ import { Typography,Button,Box } from '@mui/material';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { useSelector } from 'react-redux'
 import Lottie from 'react-lottie';
-import animationData from '../../lotties/121421-login (1).json';
+import animationData from '../../lotties/72874-user-profile-v2.json';
 import useStyles from './styles.js';
 const Profile = () => {
   const classes=useStyles();
@@ -91,7 +91,7 @@ const Profile = () => {
         color:'gray',
         marginTop:'10px',
         marginBottom:'10px'
-      }}>
+      }} fontFamily="Roboto">
         Add some favorite movies ❤️
       </Typography>
       :(
