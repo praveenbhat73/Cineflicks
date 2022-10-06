@@ -2,8 +2,11 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
   movie: {
+   
+   
    padding: '10px',
-
+   
+   
   },
   title: {
     color: theme.palette.text.primary,
@@ -24,28 +27,33 @@ export default makeStyles((theme) => ({
     fontWeight: 'bolder',
     textDecoration: 'none',
     [
+      theme.breakpoints.down('sm')
+      
+    ]:{
+      marginTop:'10px'
+    },
+    [
       theme.breakpoints.up('xs')
     ]: {
       display: 'flex',
       flexDirection: 'column',
     },
-    textDecoration:'none',
+    // textDecoration:'none',
     '&:hover': {
       cursor: 'pointer',
     },
   },
   image: {
 
-    borderRadius:'5px',
+    borderRadius:'10px',
     height: '310px',
     marginBottom: '12px',
-    // boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
-    // boxShadow: '3px 3px 3px 3px rgba(0, 0, 0, 0.2)',
-    // boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px;',
+    
+    border:'1px solid black',
+    
     '&:hover': {
-      transform: 'scale(1.06)',
-      // boxShadow:' rgba(0, 0, 0, 0.2) 0px 5px;'
-      boxShadow: '0.5em 1em 1em rgb(64, 64, 70)',
+      transform: 'scale(1.02)',
+      boxShadow:'.5em 1em 1em rgba(60,60,60,1)'
   
     },
   },

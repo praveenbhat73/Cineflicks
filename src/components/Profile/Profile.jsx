@@ -1,15 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import { userSelector } from '../../features/auth'
 import { Typography,Button,Box } from '@mui/material';
-// import { PowerOffRounded  } from '@mui/icons-material';
-import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import { ExitToApp  } from '@mui/icons-material';
+// import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { useSelector } from 'react-redux'
 import Lottie from 'react-lottie';
-import animationData from '../../lotties/72874-user-profile-v2.json';
+import animationData from '../../lotties/31162-movie-engagement.json';
 import useStyles from './styles.js';
+import { useGetListQuery } from '../../services/TMDB';
+import {RatedCards} from '..'
 const Profile = () => {
   const classes=useStyles();
-  const favoriteMovies=[];
+  // const favoriteMovies=[];
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -21,94 +23,79 @@ const Profile = () => {
   };
   const {user}=useSelector(userSelector);
   // console.log(user);
-  const[set,seti]=useState(false);
+
+  const { data: favoriteMovies, refetch: refetchFavorites } = useGetListQuery({ listName: 'favorite/movies', accountId: user.id, sessionId: localStorage.getItem('session_id'), page: 1 });
+  const { data: watchlistMovies, refetch: refetchWatchlisted } = useGetListQuery({ listName: 'watchlist/movies', accountId: user.id, sessionId: localStorage.getItem('session_id'), page: 1 });
+
+
+  useEffect(()=>{
+    refetchFavorites();
+    refetchWatchlisted();
+  },[]);
+  // const[set,seti]=useState(false);
   const logout=()=>{
     localStorage.clear();
     window.location.href="/";
   }
   return (
-    <Box>
-    <Box display="flex" justifyContent="space-between">
-    {/* <Button color="inherit" onClick={logout}>
-      Logout &nbsp;
-      <ExitToApp/>
-    </Button> */}
+  <>    <Box
+    display="flex"
+    flexDirection="column"
+    textAlign="center"
+    alignItems="center"
+    marginTop="10px"
+  >
+    <Lottie options={defaultOptions} height={300} width={300} />
+    <br></br>
+    <div>
+      <Typography
+        variant="h6"
+        fontFamily={"Helvetica Neue"}
+        gutterBottom
+      >{`UserName : ${user.username}`}</Typography>
+      <Typography
+        variant="h6"
+        fontFamily={"Helvetica Neue"}
+        gutterBottom
+      >{`UserID : ${user.id}`}</Typography>
+    </div>
 
-    <div
-    className={classes.div} > 
-    <button
-    className={classes.button}
-    onClick={()=>{
-      seti(!set)
-    }}
-   
+    <Button
+      variant="outlined"
+      sx={{ width: 200, padding: 1, margin: 2 }}
+      color="inherit"
+      onClick={logout}
     >
-      {
-       set ?
-       "Hide Profile😣"
-       :
-       "Who's Watching?😎" 
-      }
-    </button>
-    {
-      set &&
-      <>
-    <Lottie 
-	    options={defaultOptions}
-        height={300}
-        width={300}
-        
-      />
-    <h3 
-    className={classes.h3}>
-    Profile
-    </h3>
-    <div 
-    className={classes.divi}
-    >
-      {
-        <>
-       
-        <h1 
-        className={classes.h1}
-      >Username:- </h1>
-       
-                    {
-                          user.username
-                    }
-       
-       
-        </>
-      }
-      </div>
+      Logout &nbsp; <ExitToApp />
+    </Button>
+  </Box>
+  <br></br>
 
     {
-      !favoriteMovies.length
+      !favoriteMovies?.results?.length && !watchlistMovies?.results?.length
       ?
       <Typography variant='h5'
       sx={{
-        fontSize:'20px',
+        fontSize:'30px',
         color:'gray',
         marginTop:'10px',
         marginBottom:'10px'
-      }} fontFamily="Roboto">
-        Add some favorite movies ❤️
+      }} fontFamily="Helvetica Neue">
+        Add Some Movies 📽️
       </Typography>
       :(
-        <Box>
-          Favorite Movie🍟
+        <Box style={{color:"gray",textTransform:"uppercase",fontSize:"20px"}}> 
+          <RatedCards title="Favorite Movies" data={favoriteMovies} />
+          <RatedCards title="WatchList Movies" data={watchlistMovies} />
         </Box>
       )
     }
-      <Button color="inherit" onClick={logout}
-      >
-      Logout &nbsp;
-      <PowerSettingsNewIcon/>
-    </Button>
-      </>
-    }
-    </div>
-    </Box></Box>
+     
+    
+    
+  
+    
+    </>
   )
 }
 

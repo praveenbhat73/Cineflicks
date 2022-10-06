@@ -43,7 +43,7 @@ const NavBar = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.app}>
         <Toolbar className={classes.toolbar} >
             {
               isMobile && (

@@ -1,15 +1,16 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) =>({
-    container:{
-        display:'flex',
-        justifyContent:'space-around',
-        margin:'10px !important',
-        [
-            theme.breakpoints.down('sm')]: {
-            flexDirection:'column',
-            flexWrap:'wrap',
-        },
+    containerSpaceAround:{
+      display: 'flex',
+      justifyContent: 'space-around',
+      margin: '10px 0 !important',
+      [theme.breakpoints.down('sm')]: {
+        flexDirection: 'column',
+        flexWrap: 'wrap',
+        padding:'0',
+        // marginTop:'20px',
+      },
     },
     poster: {
         borderRadius: '5px',
@@ -20,11 +21,16 @@ export default makeStyles((theme) =>({
             boxShadow: '0.7em 1.1em 1.1em rgb(64, 64, 69)',
         },
         [theme.breakpoints.down('md')]: {
-          margin: '0 auto !imporatant',
+          margin: '0 auto !important',
           width: '50%',
+          display:'flex',
+         
+        //  marginLeft:'50%'
+          // height: '28rem',
         },
         [theme.breakpoints.down('sm')]: {
-          margin: '0 auto !imporatant',
+          margin: '0 auto !important',
+          // marginTop:'50px',
           width: '100%',
           height: '350px',
           marginBottom: '30px',
@@ -33,7 +39,7 @@ export default makeStyles((theme) =>({
       genresContainer: {
         margin: '10px 0 !imaportant',
         display: 'flex',
-        gap:'20px',
+        // gap:'20px',
         justifyContent: 'space-around',
         flexWrap: 'wrap',
       },
