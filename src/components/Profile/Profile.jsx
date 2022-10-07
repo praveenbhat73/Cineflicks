@@ -5,7 +5,7 @@ import { ExitToApp  } from '@mui/icons-material';
 // import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { useSelector } from 'react-redux'
 import Lottie from 'react-lottie';
-import animationData from '../../lotties/31162-movie-engagement.json';
+import animationData from '../../lotties/63004-profile-password-unlock.json';
 import useStyles from './styles.js';
 import { useGetListQuery } from '../../services/TMDB';
 import {RatedCards} from '..'
