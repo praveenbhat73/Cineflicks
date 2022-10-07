@@ -39,32 +39,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Cineflicks made with using react,redux,TMDB,Material Ui and Alan Ai
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+movie page 
+![Screenshot (85)](https://user-images.githubusercontent.com/108626052/194656706-583fa181-dcf6-4686-8279-db68066aad3f.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+movieinfo page
 
-### Code Splitting
+![Screenshot (86)](https://user-images.githubusercontent.com/108626052/194656820-54b0da66-0cbf-4865-baa9-732de7934758.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+actor page
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Screenshot (87)](https://user-images.githubusercontent.com/108626052/194656891-29462dd4-350b-4410-87ef-49b60e435d8e.png)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed in Vercel 
+https://cineflicks.vercel.app/
