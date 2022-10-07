@@ -13,13 +13,13 @@ import { ColorModeContext } from '../../utils/ToggleColorMode'
 // import { useContext } from 'react'
 
 const NavBar = () => {
- const[mobileOpen,setmobileOpen]=useState(false);
- const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector(userSelector);
-
   const classes=useStyles();
   const isMobile=useMediaQuery('(max-width:600px)')
   const theme=useTheme(); 
+  const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector(userSelector);
+ const[mobileOpen,setMobileOpen]=useState(false);
+
 
   // console.log(user)
   const colorMode=useContext(ColorModeContext)
@@ -54,7 +54,7 @@ const NavBar = () => {
                 edge="start"
                 styles={{outline:'none'}}
                 onClick={
-                  ()=>setmobileOpen((prevmobileOpen)=>!prevmobileOpen)
+                  ()=>setMobileOpen((prevMobileOpen)=>!prevMobileOpen)
                 }
                 className ={classes.menuButton}
                 >
@@ -85,17 +85,16 @@ const NavBar = () => {
                   component={Link}
                   to={`/profile/${user.id}`}
                   className={classes.linkButton}
-                  onClick={() => setmobileOpen(false)}
+                  onClick={() => setMobileOpen(false)}
                   >
                     {
                       !isMobile && <>My Movies &nbsp;</>
                     }
                     <Avatar
-                    style={{
-                      width: 30,height:30
-                    }} alt="Profile"
-                    src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'/>
-
+                  style={{ width: 30, height: 30 }}
+                  alt="Profile"
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
+                />
                     
 
                   </Button>
@@ -115,17 +114,17 @@ const NavBar = () => {
                   variant='temporary'
                   anchor='right'
                   open={mobileOpen}
-                  onClose={()=>setmobileOpen((prevmobileOpen)=>!prevmobileOpen)}
+                  onClose={()=>setMobileOpen((prevMobileOpen)=>!prevMobileOpen)}
                   // className={classes.drawerBackground}
                   classes={{paper:classes.drawerPaper}}
                   ModalProps={{keepMounted:true}}   
                   >
-                  <Sidebar setmobileOpen={setmobileOpen}/>
+                  <Sidebar setMobileOpen={setMobileOpen}/>
                   </Drawer>
              ) : (
                   <Drawer classes={{paper:classes.drawerPaper}} 
                   variant="permanent" open>
-                    <Sidebar setMobileOpen={setmobileOpen}/>
+                    <Sidebar setMobileOpen={setMobileOpen}/>
                   </Drawer>
              )
             }
