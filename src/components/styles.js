@@ -21,7 +21,7 @@ export default makeStyles((theme)=>({
             theme.breakpoints.down('sm')
         ]:{
             padding:'0',
-            width:'100%'
+            // width:'100%'
         },
     },
 }))

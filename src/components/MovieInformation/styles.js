@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) =>({
+  
     containerSpaceAround:{
       display: 'flex',
       justifyContent: 'space-around',
@@ -8,9 +9,10 @@ export default makeStyles((theme) =>({
       [theme.breakpoints.down('sm')]: {
         flexDirection: 'column',
         flexWrap: 'wrap',
-        padding:'0',
+        padding:'2',
         // marginTop:'20px',
       },
+    
     },
     poster: {
         borderRadius: '5px',
@@ -34,7 +36,9 @@ export default makeStyles((theme) =>({
           width: '100%',
           height: '350px',
           marginBottom: '30px',
+         
         },
+   
       },
       genresContainer: {
         margin: '10px 0 !imaportant',

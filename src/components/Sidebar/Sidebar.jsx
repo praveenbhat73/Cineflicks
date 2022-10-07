@@ -3,13 +3,14 @@ import { Divider, List, ListItem, ListItemText, ListSubheader, ListItemIcon, Box
 import {Link} from 'react-router-dom'
 import {useTheme} from '@mui/styles';
 import useStyles from './styles';
-
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/34590-movie-theatre.json';
 import { useDispatch,useSelector } from 'react-redux';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import genreIcons from '../../assets/geners';
-const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
-const blueLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
+// const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
+// const blueLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
 
 const categories=[
   {label:'Popular',value:'popular'},
@@ -27,7 +28,15 @@ const democategories=[
 
 
 const Sidebar = ({setMobileOpen}) => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
 
 
   const theme=useTheme();
@@ -42,11 +51,12 @@ const Sidebar = ({setMobileOpen}) => {
     <div className={classes.scroll}>
   
       <Link to="/" className={classes.imageLink}>
-      <img
+      {/* <img
        className={classes.image}
        src={theme.palette.mode ==='light' ? redLogo :blueLogo}
         alt="Filmpire Logo"
-      />
+      /> */}
+      <Lottie options={defaultOptions} height={110} width={110} />
 
       </Link>
       <Divider/>
