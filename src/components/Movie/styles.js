@@ -53,7 +53,7 @@ export default makeStyles((theme) => ({
     
     '&:hover': {
       transform: 'scale(1.02)',
-      boxShadow:'.5em 1em 1em rgba(60,60,60,1)'
+      boxShadow: '0.7em 1.1em 1.1em rgb(64, 64, 69)',
   
     },
   },
