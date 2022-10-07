@@ -21,6 +21,8 @@ const MovieInformation = () => {
   const dispatch = useDispatch();
   const[open,setOpen]=useState(false);
   
+  
+
   const {data,isFetching,error}=useGetMovieQuery(id);
 
   const {data:recommendations,isFetching:isrecommendation}=useGetRecommendationsQuery({
@@ -65,6 +67,7 @@ const MovieInformation = () => {
     return(
     <Box display="flex" justifyContent="center" alignItems="center">
       <CircularProgress size="6rem"/>
+      {/* <Lottie options={defaultOptions} height={300} width={300} /> */}
     </Box>
   );
 }
@@ -79,7 +82,7 @@ if(error){
 );
 }
   return (
-    <div>
+    <div className={classes.div}>
       <Grid container className={classes.containerSpaceAround}>
         <Grid item sm={12} lg={4}
         style={{marginBottom:'30px',marginTop:'10px'}}
@@ -127,7 +130,7 @@ if(error){
           <Grid item className={classes.genresContainer}>
           {data?.genres?.map((genre) => (
             <Link className={classes.links} key={genre.name} to="/" onClick={() => dispatch(selectGenreOrCategory(genre.id))}>
-              <img src={genreIcons[genre.name.toLowerCase()]} className={classes.genreImage} height={30} />
+              <img src={genreIcons[genre.name.toLowerCase()]} className={classes.genreImage} height={30} alt="genres" />
               <Typography color="textPrimary" variant="subtitle1" fontFamily="Helvetica Neue"> {genre?.name}</Typography>
             </Link>
           ))}
