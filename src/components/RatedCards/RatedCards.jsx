@@ -10,7 +10,9 @@ const RatedCards = ({title,data}) => {
     <div>
       <Box>
         <Typography variant='h5' gutterBottom>
-            {title}
+             {
+          data?.results?.length > 0 ? title : ''
+        }
         </Typography>
         <Box display="flex" flexWrap="wrap" className={classes.container}>
             {
