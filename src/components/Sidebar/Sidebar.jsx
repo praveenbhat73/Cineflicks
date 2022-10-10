@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {useTheme} from '@mui/styles';
 import useStyles from './styles';
 import Lottie from 'react-lottie';
-import animationData from '../../lotties/34590-movie-theatre.json';
+import animationData from '../../lotties/logo.json';
 import { useDispatch,useSelector } from 'react-redux';
 import { useGetGenresQuery } from '../../services/TMDB';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
@@ -59,6 +59,7 @@ const Sidebar = ({setMobileOpen}) => {
        src={theme.palette.mode ==='light' ? redLogo :blueLogo}
         alt="Filmpire Logo"
       /> */}
+ <Typography fontSize="24px" fontFamily="sans-serif" className={classes.th} fontWeight="bold" style={{display:"flex",alignItems:"center",justifyContent:"center", padding:"5px 5px 5px 5px"}}>CINEFLICKS</Typography>
       <Lottie options={defaultOptions} height={110} width={110} />
 
       </Link>
