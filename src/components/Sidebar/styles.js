@@ -21,4 +21,12 @@ export default makeStyles((theme)=>({
     color: 'primary',
     fontSize: 30,
   },
+   th:{
+    
+    [
+      theme.breakpoints.down('sm')
+    ]:{
+    color:theme.palette.mode === 'dark' && 'grey',
+    }
+  },
 }))
