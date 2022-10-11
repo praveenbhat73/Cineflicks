@@ -45,16 +45,17 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## Cineflicks made with using react,redux,TMDB,Material Ui and Alan Ai
 
 movie page 
-![Screenshot (85)](https://user-images.githubusercontent.com/108626052/194656706-583fa181-dcf6-4686-8279-db68066aad3f.png)
+
+![Screenshot (88)](https://user-images.githubusercontent.com/108626052/195014488-3284786f-a9dd-45aa-8e35-b50ff7fbfc8d.png)
 
 movieinfo page
 
-![Screenshot (86)](https://user-images.githubusercontent.com/108626052/194656820-54b0da66-0cbf-4865-baa9-732de7934758.png)
-
-actor page
+![Screenshot (89)](https://user-images.githubusercontent.com/108626052/195014502-10cbf336-dbd6-4af5-a28c-c14813999b53.png)
 
 
-![Screenshot (87)](https://user-images.githubusercontent.com/108626052/194656891-29462dd4-350b-4410-87ef-49b60e435d8e.png)
+
+
+
 
 Deployed in Vercel 
 https://cineflicks.vercel.app/
