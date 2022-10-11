@@ -14,6 +14,10 @@ card:{
     display:'flex',
     justifyContent:'flex-end',
     flexDirection:'column',
+     '&:hover':{
+      border:'1px solid white',
+      boxShadow: '0.7em 1.1em 1.1em rgb(64, 64, 69)',
+    },
 
 },
 cardRoot:{
