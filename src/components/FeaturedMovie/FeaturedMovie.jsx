@@ -21,8 +21,8 @@ function FeaturedMovie({ movie }) {
         />
         <Box padding="20px">
           <CardContent className={classes.cardContent} classes={{ root: classes.cardContentRoot }}>
-            <Typography variant="h5" gutterBottom>{movie.title}</Typography>
-            <Typography variant="body2">{movie.overview}</Typography>
+            <Typography fontSize="30px" fontWeight="bold" fontFamily="Helvetica Neue" gutterBottom>{movie.title}</Typography>
+            <Typography variant="body" fontFamily="sans-serif" fontWeight="bold">{movie.overview}</Typography>
           </CardContent>
         </Box>
       </Card>
