@@ -41,8 +41,10 @@ if (error)return 'An error occured';
 
   return (
     <>
-    <FeaturedMovie movie={data.results[0]}/>
-    <MovieList movies={data} numberOfMovies={numberOfMovies} excludeFirst/>
+    <FeaturedMovie movie={data.results[
+    Math.floor(Math.random()*data.results.length-1)
+    ]}/>
+    <MovieList movies={data} numberOfMovies={numberOfMovies}/>
     <Pagination setPage={setPage} currentPage={page} totalPage={data.total_pages}/>
     </>
 
