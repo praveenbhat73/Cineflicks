@@ -102,7 +102,7 @@ const Sidebar = ({setMobileOpen}) => {
       </List>
       <Typography variant='h6' sx={{marginTop:'2px',color:'gray'}}>
             <a href="https://praveennbhat.vercel.app/"  target="_blank" style={{textDecoration:'none', color:'gray', fontSize:'15px'}}>
-              Copyright © PNB Made With☕
+              Copyright © PNB Made With🧑‍💻
             </a>
       </Typography>
     </div>
